@@ -4,23 +4,19 @@ function Szamolo() {
   const [szam1, setSzam1] = useState(0);
   const [szam2, setSzam2] = useState(0);
   const [eredmeny, setEredmeny] = useState(0);
-  const [muvelet, setMuvelet] = useState("");
-
-  const Szamol = () => {
-     
-  };
+  const [muvelet, setMuvelet] = useState("+");
 
   const Szamlalo = () => {
-    if (muvelet == "*") {
+    if (muvelet === "*") {
       setEredmeny(szam1 * szam2);
     }
-    if (muvelet == "+") {
+    if (muvelet === "+") {
       setEredmeny(szam1 + szam2);
     }
-    if (muvelet == "-") {
+    if (muvelet === "-") {
       setEredmeny(szam1 - szam2);
     }
-    if (muvelet == "/") {
+    if (muvelet === "/") {
       setEredmeny(szam1 / szam2);
     }
   };
@@ -44,7 +40,7 @@ function Szamolo() {
         onChange={(e) => setSzam2(Number(e.target.value))}
       />
       {eredmeny}
-      <button onClick={Szamol}>Számol</button>
+      <button onClick={Szamlalo}>Számol</button>
     </div>
   );
 }
